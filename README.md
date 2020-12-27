@@ -12,7 +12,7 @@
 
 - Vanilla JS
 
-- Responsive Site
+- Responsive Site✅
 
 #### WHAT ELSE
 
