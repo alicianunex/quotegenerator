@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 body {
   color: white;
   background-color: rgb(58, 64, 73);
@@ -10,25 +12,198 @@ html {
 }
 
 #title {
-  font-family: 'Poiret One', cursive;
-  font-size: 70px;
+  font-size: 56px;
   margin-bottom: 1em;
+  font-weight: bold;
+  text-align: center;
+  font-family: rockwell;
+  text-shadow: -1px -1px 0px rgba(0, 0, 255, 0.185),
+    3px 3px 0px rgba(13, 13, 145, 0.637), 6px 6px 0px rgb(7, 34, 124);
 }
 
-#quote-box {
-  font-size: 18px;
-  font-weight: 100;
-  margin: 0 auto;
-  float: initial;
-  height: 3em !important;
-  min-height: 3em;
+#subtitle {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fdfdfd;
+  margin-top: -0.2em;
+  text-shadow: 0 0 0.6rem #e6fffd, 0 0 1.5rem #65ffe586,
+    -0.2rem 0.1rem 1rem #65ffeaad, 0.2rem 0.1rem 1rem #65fff2;
+}
+#subtitle {
+  animation: glitch 1s linear infinite;
 }
 
-#buttons {
-  margin-top: 6em;
-  float: initial;
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
 }
 
-#author {
-  font-style: italic;
+subtitle:before,
+subtitle:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+subtitle:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+subtitle:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+.container {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: cadetblue;
+}
+
+.container:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+  #title {
+    text-align: center;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  padding: 50px;
+  padding-top: 10px;
+  padding-bottom: 90px;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+blockquote {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #000000;
+  padding: 30px 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+  margin: 80px auto;
+  align-self: center;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+}
+.quote-text {
+  position: relative;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+blockquote:after {
+  position: absolute;
+  content: '”';
+  color: rgba(255, 255, 255, 1);
+  font-size: 10rem;
+  line-height: 0;
+  bottom: -43px;
+  right: 30px;
+}
+.buttons {
+  text-align: center;
+}
+#tweet {
+  background-color: #000000;
+}
+.button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  margin: 2px auto auto;
+  padding: 5px 10px 5px 10px;
+}
+.button:hover {
+  opacity: 0.75;
+}
+
+@media (min-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  blockquote quote {
+    padding: 5px;
+  }
+}
+
+footer {
+  text-align: center;
+  font-family: 'Nixie One', cursive;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: white;
 }
